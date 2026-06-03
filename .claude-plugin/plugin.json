@@ -1,0 +1,9 @@
+{
+  "name": "client-master",
+  "version": "2.1.1",
+  "description": "CLIENT_ORG Claude Code master plugin — hooks, agents, skills, MCP servers, and security guardrails for TypeScript/Node.js development on AWS",
+  "author": {
+    "name": "CLIENT_ORG",
+    "email": "platform@your-org.com"
+  }
+}

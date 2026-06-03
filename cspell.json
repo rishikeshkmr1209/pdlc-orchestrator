@@ -1,0 +1,37 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "SDLC",
+    "sdlc",
+    "pytest",
+    "frontmatter",
+    "Luhn",
+    "dogfooding",
+    "whitelabel",
+    "modelcontextprotocol",
+    "your-org",
+    "tsoa",
+    "CODEOWNERS",
+    "subagent",
+    "subagents",
+    "gitignore",
+    "gitignored",
+    "SCREAMING",
+    "kebab",
+    "camelCase",
+    "PascalCase",
+    "prereqs",
+    "noprompt",
+    "devcontainer",
+    "devcontainers",
+    "topological",
+    "upstash"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    ".claude/checkpoints",
+    "docs/artifacts",
+    "tests/fixtures"
+  ]
+}

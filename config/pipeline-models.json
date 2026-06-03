@@ -1,0 +1,30 @@
+{
+  "_comment": "Central model configuration for the SDLC pipeline. Inline skills (Ph1–Ph6, Ph8–Ph10) use the full model IDs specified here — pinned to an exact version. Ph7 subagents are invoked via the Agent tool which only accepts sonnet|opus|haiku aliases; Anthropic controls alias resolution for those and they cannot be pinned. Update full model IDs here when intentionally upgrading. 'default' is used as fallback for any phase not explicitly listed.",
+  "pricing_per_million_tokens": {
+    "_comment": "USD per 1M tokens. Update when Anthropic changes pricing.",
+    "sonnet": { "input": 3.00, "cache_write": 3.75, "cache_read": 0.30, "output": 15.00 },
+    "opus":   { "input": 15.00, "cache_write": 18.75, "cache_read": 1.50, "output": 75.00 },
+    "haiku":  { "input": 0.80, "cache_write": 1.00, "cache_read": 0.08, "output": 4.00 }
+  },
+  "default": { "model": "claude-sonnet-4-6" },
+  "_model_selection_note": "Planning phases (requirements/architecture/design-review/impl-planning) default to sonnet. jira-classification overrides these to opus when ticket type is Large Feature.",
+  "phases": {
+    "requirements":   { "model": "claude-sonnet-4-6" },
+    "architecture":   { "model": "claude-sonnet-4-6" },
+    "design-review":  { "model": "claude-sonnet-4-6" },
+    "impl-planning":  { "model": "claude-sonnet-4-6" },
+    "implementation": { "model": "claude-sonnet-4-6" },
+    "simplify":       { "model": "claude-haiku-4-5-20251001" },
+    "review":         { "model": "claude-haiku-4-5-20251001" },
+    "verification":   { "model": "claude-sonnet-4-6" },
+    "risk":           { "model": "claude-sonnet-4-6" },
+    "pr":             { "model": "claude-haiku-4-5-20251001" }
+  },
+  "large_feature_overrides": {
+    "_comment": "Applied by jira-classification when ticket type is Large Feature. Planning phases get opus for higher quality architectural reasoning. Ph7 subagents use the 'opus' alias — Anthropic resolves the exact version.",
+    "requirements":  { "model": "claude-opus-4-6" },
+    "architecture":  { "model": "claude-opus-4-6" },
+    "design-review": { "model": "claude-opus-4-6" },
+    "impl-planning": { "model": "claude-opus-4-6" }
+  }
+}

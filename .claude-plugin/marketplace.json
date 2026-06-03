@@ -1,0 +1,34 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "client-registry",
+  "version": "2.1.0",
+  "description": "CLIENT_ORG Claude Code plugins — security guardrails, code review, testing, and DevOps tools for TypeScript/Node.js on AWS",
+  "metadata": {
+    "description": "CLIENT_ORG Claude Code plugins — security guardrails, code review, testing, and DevOps tools for TypeScript/Node.js on AWS"
+  },
+  "owner": {
+    "name": "CLIENT_ORG",
+    "email": "platform@your-org.com"
+  },
+  "plugins": [
+    {
+      "name": "client-master",
+      "description": "Full CLIENT_ORG master plugin — hooks (prompt scanner, destructive guard, env guard, ESLint on-save, context monitor, bell, session learnings), agents (code reviewer, security auditor, test engineer, PR manager, architect, DevOps), skills (code review, security scan, test generation, PR creation, session learnings, codebase indexing, full SDLC pipeline), and MCP servers (Sequential Thinking, Playwright, Context7)",
+      "version": "2.1.0",
+      "author": {
+        "name": "CLIENT_ORG"
+      },
+      "source": "./",
+      "keywords": [
+        "typescript",
+        "nodejs",
+        "aws",
+        "security",
+        "code-review",
+        "testing",
+        "devops"
+      ],
+      "category": "development"
+    }
+  ]
+}

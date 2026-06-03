@@ -1,0 +1,39 @@
+{
+  "_description": "Defines which SDLC pipeline phases execute for each JIRA issue classification. Read by the jira-classification skill to determine the execution plan. The classification result is always shown to the user for confirmation before the pipeline starts. If the user provides a different classification, that classification takes precedence.",
+
+  "phase_sets": {
+
+    "Hotfix": {
+      "_description": "Critical production break. Speed is the priority. No design or planning phases — go straight to implementation with an abbreviated requirements pass to capture just enough context.",
+      "phases": ["requirements", "implementation", "review", "pr"]
+    },
+
+    "Bug": {
+      "_description": "Non-critical defect with a known root cause. Includes simplify and verification to ensure the fix does not introduce regressions, but skips architecture and design phases.",
+      "phases": ["requirements", "implementation", "simplify", "review", "verification", "pr"]
+    },
+
+    "Spike": {
+      "_description": "Time-boxed investigation to answer a specific technical question or reduce uncertainty. Produces a spike_report.md in docs/artifacts/<ticket>/ capturing findings and recommendations. No code is shipped — there is no implementation or PR phase.",
+      "phases": ["requirements", "spike"],
+      "outputs": ["docs/artifacts/<ticket>/spike_report.md"]
+    },
+
+    "Story": {
+      "_description": "A user-facing feature or behaviour change that is well-understood enough to skip architecture. Includes implementation planning but no formal design review or risk assessment.",
+      "phases": ["requirements", "impl-planning", "implementation", "simplify", "review", "pr"]
+    },
+
+    "Small Feature": {
+      "_description": "A contained feature that needs a design but is low enough risk to skip a formal design review and risk assessment. Full implementation lifecycle with verification. The qa-test-generation phase runs sequentially after architecture (no design-review present to parallelise with).",
+      "phases": ["requirements", "architecture", "qa-test-generation", "impl-planning", "implementation", "simplify", "review", "verification", "pr"]
+    },
+
+    "Large Feature": {
+      "_description": "A significant feature with broad impact, cross-team dependencies, or architectural complexity. Runs all 10 pipeline phases including design review and risk assessment before PR creation. The qa-test-generation phase runs in parallel with design-review and is informational (does not gate Phase 4).",
+      "phases": ["requirements", "architecture", "design-review", "qa-test-generation", "impl-planning", "implementation", "simplify", "review", "verification", "risk", "pr"]
+    }
+
+  }
+
+}

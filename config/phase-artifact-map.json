@@ -1,0 +1,193 @@
+{
+  "_comment": "Maps each pipeline phase to the exact ## sections it needs from each MD artifact. Use scripts/extract-sections.py to extract. Section names must match the ## header text exactly (case-sensitive). '*' means extract the full file. Fallback: if a section is missing, warn and read the full file.",
+  "_rationale": "MD section extraction is preferred over JSON conversion. LLMs read Markdown natively; section headers make precise extraction straightforward; no intermediate JSON files are needed. Token savings come from passing only the required sections rather than full documents.",
+  "_path_rule": "All artifact paths MUST be constructed from md_base_path or state_base_path. $PROJECT_ROOT is the workspace root — the directory containing claude-master-plugin/ as a direct subdirectory, resolved by walking up from CWD at pipeline startup (never pwd directly). Replace <ticket> with the actual ticket ID at runtime. Never hardcode bare relative paths like docs/artifacts/ — always use these base path keys.",
+  "extraction_script": "claude-master-plugin/scripts/extract-sections.py",
+  "md_base_path": "$PROJECT_ROOT/docs/artifacts/<ticket>",
+  "state_base_path": "$PROJECT_ROOT/docs/artifacts/<ticket>/.state",
+
+  "phases": {
+    "Ph2_architecture": {
+      "ph1_problem_spec.md": [
+        "Requirements",
+        "Acceptance Criteria",
+        "Constraints",
+        "Non-Goals",
+        "Assumptions"
+      ],
+      "artifact-digest.md": ["Codebase Scan"],
+      "_artifact_digest_path": "state_base_path"
+    },
+
+    "Ph3_design_review": {
+      "ph1_problem_spec.md": [
+        "Requirements",
+        "Acceptance Criteria",
+        "Constraints",
+        "Assumptions"
+      ],
+      "ph2_design_spec.md": ["*"]
+    },
+
+    "Ph3b_qa_test_plan": {
+      "_description": "QA test generation phase (sdlc-qa-test-generation skill). Runs in parallel with Ph3 design-review for Large Feature, or sequentially after architecture for Small Feature. Reads ph1 + ph2; writes ph3b_qa_test_plan.md plus state files .state/qa_jira_issues.json and .state/qa_automation.json.",
+      "ph1_problem_spec.md": [
+        "Requirements",
+        "Acceptance Criteria",
+        "Edge Cases",
+        "Constraints",
+        "Assumptions",
+        "Non-Goals",
+        "Figma Design Reference"
+      ],
+      "ph2_design_spec.md": [
+        "Architecture",
+        "API Contracts",
+        "Data Models",
+        "Security Considerations",
+        "Testing Strategy"
+      ],
+      "artifact-digest.md": ["Codebase Scan"],
+      "_artifact_digest_path": "state_base_path"
+    },
+
+    "Ph4_impl_planning": {
+      "ph1_problem_spec.md": [
+        "Requirements",
+        "Acceptance Criteria",
+        "Constraints",
+        "Non-Goals",
+        "Assumptions",
+        "Edge Cases"
+      ],
+      "ph2_design_spec.md": [
+        "Architecture",
+        "Implementation Guidelines",
+        "Testing Strategy",
+        "Data Models"
+      ],
+      "ph3_design_review.md": [
+        "Summary",
+        "Architectural Review",
+        "Complexity Concerns",
+        "Missing Considerations"
+      ],
+      "ph3b_qa_test_plan.md": [
+        "AC → Test Matrix",
+        "Regression Subset",
+        "Automation PR"
+      ],
+      "_note_ph3b_optional": "ph3b_qa_test_plan.md is only present when the phase set includes qa-test-generation (Small Feature, Large Feature). If absent, Ph4 proceeds without it.",
+      "artifact-digest.md": ["Codebase Scan"],
+      "_artifact_digest_path": "state_base_path"
+    },
+
+    "Ph5_implementation": {
+      "_note": "Ph5 reads ph4_implementation_plan.md in full — it is already a concise, self-contained plan. No section extraction needed."
+    },
+
+    "Ph6_simplify": {
+      "ph5_6_impl_manifest.md": [
+        "Files Changed Summary"
+      ]
+    },
+
+    "Ph7_spec_reviewer": {
+      "ph1_problem_spec.md": [
+        "Requirements",
+        "Acceptance Criteria"
+      ],
+      "ph2_design_spec.md": [
+        "Architecture",
+        "API Contracts",
+        "Testing Strategy"
+      ],
+      "ph5_6_impl_manifest.md": [
+        "Files Changed Summary",
+        "Known Dependencies / Open Items"
+      ]
+    },
+
+    "Ph7_test_engineer": {
+      "ph1_problem_spec.md": [
+        "Acceptance Criteria",
+        "Edge Cases"
+      ],
+      "ph2_design_spec.md": [
+        "Testing Strategy"
+      ],
+      "ph3b_qa_test_plan.md": [
+        "AC → Test Matrix",
+        "Regression Subset"
+      ],
+      "_note_ph3b_optional": "When ph3b_qa_test_plan.md exists, Phase 7 test-engineer reconciles implemented tests against the AC→Test matrix. If absent, the existing Phase 7 logic runs unchanged.",
+      "ph5_6_impl_manifest.md": [
+        "Files Changed Summary"
+      ]
+    },
+
+    "Ph7_security_auditor": {
+      "ph2_design_spec.md": [
+        "Security Considerations",
+        "API Contracts",
+        "Data Models"
+      ],
+      "ph5_6_impl_manifest.md": [
+        "Files Changed Summary"
+      ]
+    },
+
+    "Ph8_verification": {
+      "ph1_problem_spec.md": [
+        "Requirements",
+        "Acceptance Criteria",
+        "Constraints",
+        "Edge Cases"
+      ],
+      "ph2_design_spec.md": [
+        "Meta",
+        "Architecture",
+        "API Contracts",
+        "Data Models"
+      ],
+      "ph3_design_review.md": [
+        "Summary",
+        "Sign-Off"
+      ],
+      "ph5_6_impl_manifest.md": ["*"],
+      "_note_artifact_digest": "artifact-digest.md is read in full directly (not via extract-sections.py) from state_base_path"
+    },
+
+    "Ph9_risk": {
+      "ph1_problem_spec.md": [
+        "Requirements",
+        "Constraints",
+        "Assumptions",
+        "Edge Cases",
+        "Non-Goals"
+      ],
+      "ph2_design_spec.md": [
+        "Architecture",
+        "API Contracts",
+        "Decisions (ADRs)",
+        "Security Considerations",
+        "Implementation Guidelines"
+      ],
+      "ph5_6_impl_manifest.md": [
+        "Files Changed Summary",
+        "Known Dependencies / Open Items",
+        "Simplification"
+      ],
+      "_note_artifact_digest": "artifact-digest.md is read in full directly (not via extract-sections.py) from state_base_path"
+    },
+
+    "Ph10_pr_creation": {
+      "_note": "Ph10 primarily uses git diff and commit history. Manifest sections supplement PR description only.",
+      "ph5_6_impl_manifest.md": [
+        "Files Changed Summary",
+        "Simplification",
+        "Known Dependencies / Open Items"
+      ]
+    }
+  }
+}
