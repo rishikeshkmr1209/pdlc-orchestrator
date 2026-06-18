@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "mcp__atlassian__*",
+      "mcp__github__*",
+      "Glob",
+      "Grep",
+      "Bash(git log*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(git rev-parse*)",
+      "Bash(git ls-files*)",
+      "Bash(find * -name *)",
+      "Bash(ls*)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(jq * *)",
+      "Bash(node --version*)",
+      "Bash(npm test*)",
+      "Bash(npx tsc --noEmit*)",
+      "Bash(npx eslint *)"
+    ],
+    "deny": []
+  }
+}

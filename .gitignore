@@ -1,1 +1,4 @@
 .DS_Store
+
+# SDLC pipeline ephemeral checkpoints (auto-added by plugin)
+.claude/checkpoints/

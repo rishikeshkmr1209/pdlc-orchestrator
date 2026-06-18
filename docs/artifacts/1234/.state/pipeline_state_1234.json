@@ -1,0 +1,61 @@
+{
+  "ticket": "1234",
+  "classification": {
+    "type": "Small Feature",
+    "confidence": 0.85,
+    "reasoning": "Net-new self-contained app with no cross-team dependencies or architectural complexity",
+    "phase_set": [
+      "requirements",
+      "architecture",
+      "qa-test-generation",
+      "impl-planning",
+      "implementation",
+      "simplify",
+      "review",
+      "verification",
+      "pr"
+    ],
+    "classified_at": "2026-06-04T21:31:01.000+05:30",
+    "user_confirmed_at": "2026-06-04T21:31:01.000+05:30",
+    "user_override": null
+  },
+  "affected_repos": {
+    "source": "keyword_fallback",
+    "repos": [],
+    "confidence": "unresolved"
+  },
+  "mode": "gates",
+  "started_at": "2026-06-04T21:28:01.000+05:30",
+  "updated_at": "2026-06-05T09:04:00.000+05:30",
+  "current_phase": "impl-planning",
+  "phases": {
+    "requirements": {"status": "completed","model": "sonnet","started_at": "2026-06-04T21:28:01.000+05:30","completed_at": "2026-06-04T21:36:51.000+05:30","duration_ms": 530000,"user_wait_ms": 159000,"active_duration_ms": 371000,"active_wallclock_time_taken": "6m 11s","iterations": 1,"tokens_used": {"cache_creation": 47358,"cache_read": 2395162,"input": 50,"output": 8644,"total": 2451214,"cost_usd": 1.025951}},
+    "architecture": {"status": "completed","model": "sonnet","started_at": "2026-06-04T21:45:14.000+05:30","completed_at": "2026-06-05T08:50:55.000+05:30","duration_ms": 39941000,"user_wait_ms": 0,"active_duration_ms": 39941000,"active_wallclock_time_taken": "11h 5m 41s","iterations": 1,"tokens_used": {"cache_creation": 164374,"cache_read": 1929388,"input": 40,"output": 16557,"total": 2110359,"cost_usd": 1.443694}},
+    "qa-test-generation": {"status": "completed","model": "sonnet","started_at": "2026-06-05T08:58:09.000+05:30","completed_at": "2026-06-05T09:04:00.000+05:30","duration_ms": 351000,"user_wait_ms": 0,"active_duration_ms": 351000,"active_wallclock_time_taken": "5m 51s","iterations": 1,"tokens_used": {"cache_creation": 1306,"cache_read": 240924,"input": 2,"output": 184,"total": 242416,"cost_usd": 0.079941}},
+    "impl-planning": {"status": "pending","model": "sonnet","started_at": null,"completed_at": null,"duration_ms": null,"user_wait_ms": 0,"active_duration_ms": null,"active_wallclock_time_taken": null,"iterations": 0,"tokens_used": {"cache_creation": null,"cache_read": null,"input": null,"output": null,"total": null,"cost_usd": null}},
+    "implementation": {"status": "pending","model": "sonnet","started_at": null,"completed_at": null,"duration_ms": null,"user_wait_ms": 0,"active_duration_ms": null,"active_wallclock_time_taken": null,"iterations": 0,"tokens_used": {"cache_creation": null,"cache_read": null,"input": null,"output": null,"total": null,"cost_usd": null}},
+    "simplify": {"status": "pending","model": "haiku","started_at": null,"completed_at": null,"duration_ms": null,"user_wait_ms": 0,"active_duration_ms": null,"active_wallclock_time_taken": null,"iterations": 0,"tokens_used": {"cache_creation": null,"cache_read": null,"input": null,"output": null,"total": null,"cost_usd": null}},
+    "review": {"status": "pending","model": "haiku","started_at": null,"completed_at": null,"duration_ms": null,"user_wait_ms": 0,"active_duration_ms": null,"active_wallclock_time_taken": null,"iterations": 0,"tokens_used": {"cache_creation": null,"cache_read": null,"input": null,"output": null,"total": null,"cost_usd": null}},
+    "verification": {"status": "pending","model": "sonnet","started_at": null,"completed_at": null,"duration_ms": null,"user_wait_ms": 0,"active_duration_ms": null,"active_wallclock_time_taken": null,"iterations": 0,"tokens_used": {"cache_creation": null,"cache_read": null,"input": null,"output": null,"total": null,"cost_usd": null}},
+    "pr": {"status": "pending","model": "haiku","started_at": null,"completed_at": null,"duration_ms": null,"user_wait_ms": 0,"active_duration_ms": null,"active_wallclock_time_taken": null,"iterations": 0,"tokens_used": {"cache_creation": null,"cache_read": null,"input": null,"output": null,"total": null,"cost_usd": null}}
+  },
+  "tokens_summary": {
+    "total_cache_creation": 213038,
+    "total_cache_read": 4565474,
+    "total_input": 92,
+    "total_output": 25385,
+    "total": 4803989,
+    "total_cost_usd": 2.549586
+  },
+  "active_wallclock_summary": {
+    "total_active_duration_ms": 40663000,
+    "total_active_wallclock_time_taken": "11h 17m 43s"
+  },
+  "model_transitions": {},
+  "figma": {
+    "link": null,
+    "fetched": false,
+    "figma_to_new_component_mapping": null,
+    "css_implementation_guide": null
+  }
+}

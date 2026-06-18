@@ -1,0 +1,23 @@
+{
+  "status": "skipped",
+  "reason": "qa-automation repo not checked out at $WORKSPACE_ROOT/qa-automation. Do NOT auto-clone. Once the checkout is available, rerun the skill and Steps 8–9 will execute.",
+  "branch": "feature/shared/1234/qa-auto-tests",
+  "repo_path": null,
+  "pr_url": null,
+  "files_changed": [],
+  "lint_status": "skipped",
+  "regression_tests_automated": [],
+  "stream": "shared",
+  "stream_note": "No matching service in automation cookbook table — React UI-only app. Fallback to 'shared' per cookbook rule. Human override may change stream to 'e2e' or another label.",
+  "planned_spec_path": "tests/shared/game/1234-tic-tac-toe.spec.ts",
+  "regression_test_ids": [
+    "TC-1234-01",
+    "TC-1234-02",
+    "TC-1234-04",
+    "TC-1234-05",
+    "TC-1234-07",
+    "TC-1234-08",
+    "TC-1234-10",
+    "TC-1234-11"
+  ]
+}

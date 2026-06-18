@@ -1,0 +1,182 @@
+[
+  {
+    "ac": "AC-001",
+    "test_id": "TC-1234-01",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-001::3a7f2c1d4b8e",
+    "created_at": null,
+    "regression": true,
+    "regression_reason": "R2 — REQ-001 is P0 (critical-path)"
+  },
+  {
+    "ac": "AC-001",
+    "test_id": "TC-1234-02",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-001::9d2e6a4f1c7b",
+    "created_at": null,
+    "regression": true,
+    "regression_reason": "R2 — REQ-001 is P0 (critical-path)"
+  },
+  {
+    "ac": "AC-001",
+    "test_id": "TC-1234-03",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-001::4b5c8d2e9f0a",
+    "created_at": null,
+    "regression": false,
+    "regression_reason": null
+  },
+  {
+    "ac": "AC-002",
+    "test_id": "TC-1234-04",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-002::7e3f9a1b6c4d",
+    "created_at": null,
+    "regression": true,
+    "regression_reason": "R2 — REQ-002 is P0 (win detection critical-path)"
+  },
+  {
+    "ac": "AC-002",
+    "test_id": "TC-1234-05",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-002::2c8b5d7f3e1a",
+    "created_at": null,
+    "regression": true,
+    "regression_reason": "R2 — REQ-002 is P0 (diagonal win detection critical-path)"
+  },
+  {
+    "ac": "AC-002",
+    "test_id": "TC-1234-06",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-002::6a4e1c9f2b8d",
+    "created_at": null,
+    "regression": false,
+    "regression_reason": null
+  },
+  {
+    "ac": "AC-003",
+    "test_id": "TC-1234-07",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-003::5f2d8a3c7b1e",
+    "created_at": null,
+    "regression": true,
+    "regression_reason": "R2 — REQ-003 is P0 (draw detection critical-path)"
+  },
+  {
+    "ac": "AC-003",
+    "test_id": "TC-1234-08",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-003::1b9c6e4f7a3d",
+    "created_at": null,
+    "regression": true,
+    "regression_reason": "R2 — REQ-003 is P0 (board-lock after draw critical-path)"
+  },
+  {
+    "ac": "AC-003",
+    "test_id": "TC-1234-09",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-003::8d3a5f2e1c7b",
+    "created_at": null,
+    "regression": false,
+    "regression_reason": null
+  },
+  {
+    "ac": "AC-004",
+    "test_id": "TC-1234-10",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-004::4e7b1d9a6c2f",
+    "created_at": null,
+    "regression": true,
+    "regression_reason": "R2 — REQ-004 is P0 (invalid-move prevention critical-path)"
+  },
+  {
+    "ac": "AC-004",
+    "test_id": "TC-1234-11",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-004::9c2f6b4d8e1a",
+    "created_at": null,
+    "regression": true,
+    "regression_reason": "R2 — REQ-004 is P0 (idempotent invalid-move prevention)"
+  },
+  {
+    "ac": "AC-004",
+    "test_id": "TC-1234-12",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-004::3a8c5f1d7b9e",
+    "created_at": null,
+    "regression": false,
+    "regression_reason": null
+  },
+  {
+    "ac": "AC-005",
+    "test_id": "TC-1234-13",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-005::7b1e4a9c3f6d",
+    "created_at": null,
+    "regression": false,
+    "regression_reason": null
+  },
+  {
+    "ac": "AC-005",
+    "test_id": "TC-1234-14",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-005::2d9f7b4e1a6c",
+    "created_at": null,
+    "regression": false,
+    "regression_reason": null
+  },
+  {
+    "ac": "AC-005",
+    "test_id": "TC-1234-15",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-005::6c4b2e9d1f7a",
+    "created_at": null,
+    "regression": false,
+    "regression_reason": null
+  },
+  {
+    "ac": "AC-006",
+    "test_id": "TC-1234-16",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-006::1f8a5c3b9d2e",
+    "created_at": null,
+    "regression": false,
+    "regression_reason": null
+  },
+  {
+    "ac": "AC-006",
+    "test_id": "TC-1234-17",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-006::5e3d7f1b4a9c",
+    "created_at": null,
+    "regression": false,
+    "regression_reason": null
+  },
+  {
+    "ac": "AC-006",
+    "test_id": "TC-1234-18",
+    "jira_key": null,
+    "action": "pending-creation",
+    "dedup_key": "1234::AC-006::8b6c2a4f9e1d",
+    "created_at": null,
+    "regression": false,
+    "regression_reason": null
+  }
+]
